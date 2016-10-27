@@ -1,0 +1,10 @@
+<div id="clientDetailContent" class="qe-form-content" ng-controller="structurecompany.detail">
+    <uib-tabset>
+        <uib-tab heading="{{translation.Form_StructureCompanyDetailInfo}}" >
+            <ng-include src="'structurecompany.update'" ></ng-include>
+        </uib-tab>
+        <uib-tab heading="{{translation.Form_Detail_StructureMonitor}}">
+            <ng-include src="'structure.list'" ></ng-include>
+        </uib-tab>
+       </uib-tabset>
+</div>

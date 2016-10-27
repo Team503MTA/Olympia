@@ -1,0 +1,36 @@
+﻿<div style="overflow: auto">
+    <div class="box-outline">
+        <div ng-show="isEnable" class="box-content zoomIn animated">
+            <form ng-submit="ModelData.formLoginSubmit()" class="qe-login-form {{ModelData.class}}" role="form">
+                <div class="qe-login-logo">
+                    <div ng-bind="translation.logoName1"></div>
+                    <div ng-bind="translation.logoName2"></div>
+                </div>
+                <div class="qe-login-container">
+                    <div class="qe-login-content">
+                        <div>
+                            <!-- keyboardInput -->
+                            <input type="text" class="form-control" ng-class="ModelData.Username?'focus':''" ng-readonly="ModelData.Wait" focus="{{ModelData.IsFocusUser}}"
+                                   ng-model="ModelData.Username"
+                                   autocomplete="off" autocapitalize="off" spellcheck="off" autocorrect="off" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" ng-class="ModelData.Password?'focus':''" ng-readonly="ModelData.Wait" focus="{{ModelData.IsFocusPass}}"
+                                   ng-model="ModelData.Password"
+                                   autocomplete="off" autocapitalize="off" spellcheck="off" autocorrect="off" />
+                        </div>
+                    </div>
+                    <button type="submit" class="qe-login-submit" ng-disabled="ModelData.Wait || !ModelData.Username || !ModelData.Password">
+                        <i ng-if="!ModelData.Wait" class="mdi mdi-keyboard-return"></i>
+                        <i class="mdi mdi-reload qe-spin"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <a ng-show="!isEnable" class="notificationLevel" ng-class="getClassName()" data-ng-click="requestPermissions()" ng-bind-html="translation.SelectNotifyType"></a>
+    </div>
+</div>
+<div ng-if="ModelData.showLangOption" class="lang">
+    <a href="javascript:void(0);" title="Switch to English" ng-click="ModelData.langClick('en_US')">English</a>
+    /<a href="javascript:void(0);" title="Chuyển sang tiếng Việt" ng-click="ModelData.langClick('vi_VN')">Tiếng Việt</a>
+</div>

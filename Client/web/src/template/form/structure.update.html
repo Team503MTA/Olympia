@@ -1,0 +1,138 @@
+﻿<div id="updateStructure" ng-controller="structure.update">
+    <div ng-include src="'w.save.cancel'"></div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="qe-heading">
+                {{translation.InfoStructure}}
+            </div>
+            <div class="qe-table">
+
+                <div class="row">
+                    <label class="col-xs-5 control-label">{{translation.StructName}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control"
+                            ng-model="ModelData.StructureName" focus="{{ModelData.IsFocusStructureName}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_StructureName" new-validation="{{validation(ModelData.CompanyName,['required'])}}"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-5 control-label">{{translation.lbl_DonViQuanLy}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input type="text" class="form-control" disabled="disabled"
+                                ng-model="ModelData.CompanyName" focus="{{ModelData.IsFocusCompanyName}}" ng-disabled="ModelData.IsViewMode"
+                                name="ModelData_CompanyName"  new-validation="{{validation(ModelData.Priority,['required','number'])}}" />
+                            <span class="input-group-btn">
+                                <button class="mdi mdi-magnify" focus="{{ModelData.IsFocusCompanyName}}" ng-click="FindCompany()"></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-5 control-label">{{translation.trongSo}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control"
+                            ng-model="ModelData.Priority" focus="{{ModelData.IsFocusPriority}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_Priority" validation-error-to="ModelData_Priority_Error"
+                            validation="required:alt={{translation.ErrorInput_required}}|numeric:alt={{translation.ErrorInput_required_So}}" />
+                        <span id="ModelData_Priority_Error" class="validation"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-5 control-label">{{translation.City}}</label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" ng-disabled="true"
+                            ng-model="ModelData.CityName" focus="{{ModelData.IsFocusCityName}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_CityName" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-5 control-label">{{translation.Area}}</label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" ng-disabled="true"
+                            ng-model="ModelData.AreaName" focus="{{ModelData.IsFocusAreaName}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_AreaName" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-6">
+            <div class="qe-heading">
+                {{translation.InfoLicenseName}}
+            </div>
+            <div class="qe-table">
+
+                <div class="row">
+                    <label class="col-xs-5 control-label">{{translation.LicenseName}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control"
+                            ng-model="ModelData.LicenseName" focus="{{ModelData.IsFocusLicenseName}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_LicenseName" new-validation="{{validation(ModelData.LicenseName,['required','max:100'])}}"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-5 control-label">{{translation.IssueDate}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input id="tu-ngay{{ModelData.timeId}}" ng-model="ModelData.TuNgayDisplay" class="form-control" ng-readonly="ModelData.IsViewMode"
+                                name="todate{{ModelData.timeId}}" new-validation="{{validation(ModelData.timeId,['required'])}}"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-5 control-label">{{translation.ExpiredDate}}<span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input id="den-ngay{{ModelData.timeId}}" ng-model="ModelData.DenNgayDisplay" class="form-control" ng-readonly="ModelData.IsViewMode"
+                                name="fromdate{{ModelData.timeId}}" new-validation="{{validation(ModelData.StructureName,['required'])}}"/>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="qe-heading">
+                {{translation.InfoQualityWasteWater}}
+            </div>
+            <div>
+                {{translation.TimeViewTerm}}
+            </div>
+            <div ag-grid="ModelData.QualityOptions"></div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="qe-heading">
+                {{translation.InfoQualityWasteWater}}
+                <div class="f-bar" style="margin-top: 12px;">
+                    <div class="f-button b-spin" ng-if="ModelData.IsEditAllowed" ng-click="addNewCommand()" title="{{translation.BUTTON_ADDNEW}}">
+                        <i class="mdi mdi-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="show-grid" ag-grid="ModelData.SourceOptions"></div>
+    </div>
+
+
+</div>

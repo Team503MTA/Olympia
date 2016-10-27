@@ -1,0 +1,9 @@
+<div style="display: inline-block; margin-top: 10px;margin-bottom: 10px;">
+    <div style="display: inline-block; margin-right: 10px;"><span>Nhập file excel: </span></div>
+    <input style="display: none" type="file" ng-model-instant id="browsertransactionimport" accept=".xlsx" class="form-control" ng-disabled="ModelData.IsViewMode"
+           onchange="angular.element(this).scope().HandleFileSelect(this);document.getElementById('showparttransactionimport').value = this.value;" multiple="false" />
+    <div style="display: inline-block;">
+        <input class="form-control" style="width: 200px; display: inline-block;" id="showparttransactionimport" ng-disabled="ModelData.IsViewMode" />
+        <button class="btn btn-primary" onclick="document.getElementById('browsertransactionimport').click();" ng-disabled="ModelData.IsViewMode">{{translation.Browse}}</button>
+    </div>
+</div>

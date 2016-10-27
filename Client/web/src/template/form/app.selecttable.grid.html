@@ -1,0 +1,8 @@
+﻿<div id="app.selecttable.grid" class="qe-form-content">
+    <div style="overflow: hidden;">
+        <div style="float: left;" ng-if="ModelData.title" ng-bind="ModelData.title"></div>
+        <button type="button" class="close" ng-click="Close()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    <input class="ag-search" placeholder="Tìm kiếm..." type="text" ng-model="ModelData.SelectableGridOptions.quickFilterText" />
+    <div ag-grid="ModelData.SelectableGridOptions"></div>
+</div>

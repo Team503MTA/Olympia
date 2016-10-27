@@ -1,0 +1,1 @@
+document.write('<script type="text/javascript" src="js/joiner/joiner.version.js?' + (new Date()).getTime() + '"> <\/script>');

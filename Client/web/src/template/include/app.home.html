@@ -1,0 +1,46 @@
+﻿<div id="appHome" class="qe-form-content" ng-controller="Ctrl.App.Home">
+    <div ng-repeat="item in ModelData.ListDataBinding">
+        <div class="qe-heading">
+            {{item.BasinName}}
+        </div>
+        <div class="qe-table">
+            <div ng-repeat="itemLake in item.ListLakeBinding">
+                <div>
+                    {{itemLake.LakeName}}
+                    <div style="float: right">
+                        <div class="g-button" ng-disabled="itemLake.IsHighLight" ng-click="ModelData.AddFunctionClick(itemLake)" title="{{translation.BUTTON_ADDNEW}}">
+                            <i class="mdi mdi-plus"></i>
+                        </div>
+                        <div class="g-button" ng-click="ModelData.InfoFunctionClick(itemLake)" title="{{translation.BUTTON_INFO}}">
+                            <span class="mdi mdi-open-in-new"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--<div>
+                    <div class="col-xs-2">
+                        {{itemLake.MucNuoc}}
+                    </div>
+                    <div class="col-xs-8" id="{{itemLake.MucNuocId}}"></div>
+                </div>
+
+                <div>
+                    <div class="col-xs-2">
+                        {{itemLake.Qden}}
+                    </div>
+                    <div class="col-xs-8" id="{{itemLake.QdenId}}"></div>
+                </div>
+
+                <div>
+                    <div class="col-xs-2">
+                        {{itemLake.Qxa}}
+                    </div>
+                    <div class="col-xs-8" id="{{itemLake.QxaId}}"></div>
+                </div>-->
+
+                <div class="waiter-status" ng-class="itemLake.IsThieuNuoc">
+                    <div>{{itemLake.TrangThai}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

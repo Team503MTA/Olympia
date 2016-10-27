@@ -1,0 +1,5 @@
+﻿var #VAR# = {
+    init: function ($templateCache) {
+		#CODEPLUS#
+	}
+}

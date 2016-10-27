@@ -1,0 +1,17 @@
+﻿<div class="w-bar">
+    <div class="w-button" ng-if="ModelData.IsViewMode && ModelData.IsEditAllowed" ng-click="EditFunctionClick()" title="{{translation.BUTTON_EDIT}}">
+        <i class="mdi mdi-pencil"></i>
+    </div>
+
+
+    <div class="w-button" disabled="disabled" ng-if="ModelData.IsViewMode && !ModelData.IsEditAllowed" title="{{translation.BUTTON_EDIT}}">
+        <i class="mdi mdi-pencil-lock"></i>
+    </div>
+
+    <div class="w-button b-orange" ng-if="!ModelData.IsViewMode" ng-click="SaveFunctionClick()" title="{{translation.BUTTON_SAVE}}">
+        <i class="mdi mdi-content-save"></i>
+    </div>
+    <div class="w-button b-red" ng-if="!ModelData.IsViewMode" ng-click="CancelFunctionClick()" title="{{translation.BUTTON_CANCLE}}">
+        <i class="mdi mdi-rotate-left"></i>
+    </div>
+</div>

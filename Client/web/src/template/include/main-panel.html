@@ -1,0 +1,14 @@
+﻿<div class="global-notify" ng-if="GlobalNotify" ng-bind="GlobalNotify"></div>
+<div class="qe-left-pan">
+     <uib-tabset type="pills" id="mainTabset" active="ModelData.ActiveIndex">
+         <uib-tab ng-repeat="mainTab in ModelData.MainTabstripItems">
+             <uib-tab-heading style="cursor: pointer">
+                 <div class="tab-heading-item" title="{{mainTab.Text}}">{{mainTab.Text}}</div>
+             </uib-tab-heading>
+             <div class="wmLoading" ng-if="mainTab.loadingState">
+                 <div class="loading ball-grid-pulse"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+             </div>
+             <ng-include src="mainTab.ContentUrl"></ng-include>
+         </uib-tab>
+     </uib-tabset>
+</div>

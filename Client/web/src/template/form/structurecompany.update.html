@@ -1,0 +1,97 @@
+<div id="structurecompanyupdate" class="qe-form-content" ng-controller="structurecompany.update">
+    <div ng-include src="'w.save.cancel.delete'"></div>
+    <div>
+        <div class="qe-heading">{{translation.UserClientUpdate_Info}}</div>
+        <form class="qe-table" role="form" name="Ctrl_User_Client_Update" novalidate="">
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.Company_Name}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.Company_Name}}"
+                           ng-model="ModelData.CompanyName" focus="{{ModelData.IsFocusFullName}}"
+                           ng-disabled="ModelData.IsViewMode"
+                           new-validation={{validation(ModelData.CompanyName,['required','max:100'])}} />
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.area_Mien}}</label>
+
+                <div class="col-xs-8">
+                    <div class="input-group">
+                        <input ng-model="ModelData.AreaName" disabled class="form-control"
+                               ng-attr-placeholder="{{translation.area_Mien}}"
+                               new-validation={{validation(ModelData.AreaName,['required'])}} />
+                    <span class="input-group-btn">
+                            <button class="mdi mdi-magnify"
+                                    ng-disabled="ModelData.IsViewMode"
+                                    ng-click="FindArea()"></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.area_Tinh}}</label>
+
+                <div class="col-xs-8">
+                    <div class="input-group">
+                        <input ng-model="ModelData.CityName" disabled class="form-control"
+                               ng-attr-placeholder="{{translation.area_Tinh}}"
+                               new-validation={{validation(ModelData.CityName,['required'])}} />
+                    <span class="input-group-btn">
+                            <button class="mdi mdi-magnify" focus="{{ModelData.IsFocusCityName}}"
+                                    ng-disabled="ModelData.IsViewMode"
+                                    ng-click="FindCity()"></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.Address}}</label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.Address}}"
+                           ng-model="ModelData.Address" ng-disabled="ModelData.IsViewMode"
+                           new-validation={{validation(ModelData.Address,['max:500'])}} />
+
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_Phone}}</label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_Phone}}"
+                           ng-model="ModelData.Phone" ng-disabled="ModelData.IsViewMode"
+                           new-validation={{validation(ModelData.Phone,['max:500'])}} />
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_Email}}</label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_Email}}"
+                           ng-model="ModelData.Email" focus="{{ModelData.IsFocusEmail}}"
+                           ng-disabled="ModelData.IsViewMode"
+                           new-validation={{validation(ModelData.Email,['max:500'])}} />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.Note}}</label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.Note}}"
+                           ng-model="ModelData.Note" focus="{{ModelData.IsFocusEmail}}"
+                           ng-disabled="ModelData.IsViewMode"
+                           new-validation={{validation(ModelData.Note,['max:500'])}} />
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

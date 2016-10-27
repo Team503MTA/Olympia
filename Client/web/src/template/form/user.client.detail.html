@@ -1,0 +1,10 @@
+<div id="clientDetailContent" class="qe-form-content" ng-controller="user.client.detail">
+    <uib-tabset>
+        <uib-tab heading="{{translation.Form_ClientDetailInfo}}" >
+            <ng-include src="'user.client.update'" ></ng-include>
+        </uib-tab>
+        <uib-tab heading="{{translation.Form_ClientDetail_AssignLake}}">
+            <ng-include src="'user.lake.assign'" ></ng-include>
+        </uib-tab>
+       </uib-tabset>
+</div>

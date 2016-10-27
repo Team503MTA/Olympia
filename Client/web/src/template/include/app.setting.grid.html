@@ -1,0 +1,24 @@
+<div id="settingGrid" class="qe-form-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="grid-setting">
+                <div>
+                    <input class="ag-search" placeholder="Tìm kiếm..." type="text" ng-model="ModelData.SettingGridOptions.quickFilterText" />
+                    <div ag-grid="ModelData.SettingGridOptions"  style="width: 250px"></div>
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-arrow-up" ng-click="ModelData.Up()"></span>
+                    <span class="glyphicon glyphicon-arrow-down" ng-click="ModelData.Down()"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qe-appro-button modal-footer">
+        <button class="btn btn-primary btn-sm" ng-click="ModelData.Done()">
+            <i class="glyphicon glyphicon-ok"></i>{{translation.BUTTON_SELECTED}}
+        </button>
+        <button class="btn btn-warning btn-sm" ng-click="ModelData.Close()">
+            <i class="glyphicon glyphicon-remove"></i>{{translation.BUTTON_Close}}
+        </button>
+    </div>
+</div>

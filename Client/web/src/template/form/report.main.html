@@ -1,0 +1,196 @@
+<div id="reportMain" class="qe-form-content" ng-controller="Ctrl.Report.Main">
+    <form role="form" name="Ctrl_Export_Report">
+        <div class="col-xs-4" ng-if="ModelData.IsShowLake">
+            <div class="list-group">
+                <div ng-repeat="item in ModelData.ListReportParentData" class="list-group-item" ng-click="ModelData.LoadDataDetail(item)" title="{{item.ReportType}}" ng-class="{'active' : item.active}">{{item.ReportType}}</div>
+            </div>
+        </div>
+
+        <div class="col-xs-6" ng-if="!ModelData.IsShowLake">
+            <div class="list-group">
+                <div ng-repeat="item in ModelData.ListReportParentData" class="list-group-item" ng-click="ModelData.LoadDataDetail(item)" title="{{item.ReportType}}" ng-class="{'active' : item.active}">{{item.ReportType}}</div>
+            </div>
+        </div>
+
+        <div class="col-xs-4" ng-if="ModelData.IsShowLake">
+
+            <div class="list-group">
+                <div class="list-group-item">
+                    <input type="text" ng-change="ModelData.SearchChanged()" ng-model="ModelData.TextSearch" placeholder="{{translation.ToolBar_Search_Lake}}" />
+                </div>
+            </div>
+            <div class="list-group">
+                <div ng-repeat="item1 in ModelData.ListLakeSeach" class="list-group-item" ng-click="ModelData.LoadDataLake(item1)" title="{{item1.ReportType}}" ng-class="{'active' : item1.active}">{{item1.ReportType}}</div>
+            </div>
+        </div>
+        <div class="col-xs-4" ng-if="ModelData.IsShowLake">
+
+            <div class="qe-table">
+                <div ng-if="ModelData.IsChonNgay">
+                    <div class="col-xs-5">{{translation.Day}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="ngay-chon" type="text" class="form-control qe-date-picker" placeholder="{{translation.Day}}"
+                                ng-model="ModelData.DateChoose" />
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsChonHo">
+                    <div class="col-xs-5">{{translation.LakeName}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="ModelData.SelectedLakeItem" ng-readonly="1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsShowMaxMin">
+                    <div class="col-xs-5">
+                        <p>{{translation.ChuyenNuoc}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="btn-group two">
+                            <label class="btn btn-default col-xs-6" ng-change="ModelData.ChuyenNuocChanged()" ng-model="ModelData.ChuyenNuoc" uib-btn-radio="true">{{translation.Yes}}</label>
+                            <label class="btn btn-default col-xs-6" ng-change="ModelData.ChuyenNuocChanged()" ng-model="ModelData.ChuyenNuoc" uib-btn-radio="false">{{translation.No}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsShowMaxMin">
+                    <div class="col-xs-5">
+                        <p>{{translation.Qmin}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input class="form-control" type="text" style="text-align: left" title="{{translation.Qmin}}" min="0"
+                                ng-model="ModelData.Qmin">
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="ModelData.IsShowMaxMin">
+                    <div class="col-xs-5">
+                        <p>{{translation.Qmax}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input class="form-control" type="text" style="text-align: left" title="{{translation.Qmax}}" min="0"
+                                ng-model="ModelData.Qmax">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div ng-if="ModelData.IsShowMaxMin">
+                    <div class="col-xs-5">
+                        <p>{{translation.Hmin}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input class="form-control" type="text" style="text-align: left" title="{{translation.Hmin}}" min="0"
+                                ng-model="ModelData.Hmin">
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="ModelData.IsShowMaxMin">
+                    <div class="col-xs-5">
+                        <p>{{translation.Hmax}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input class="form-control" type="text" style="text-align: left" title="{{translation.Hmax}}" min="0"
+                                ng-model="ModelData.Hmax">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsTuNgayDenNgay">
+                    <div class="col-xs-5">{{translation.ToolBar_Search_From}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="tu-ngay" type="text" class="form-control qe-date-picker" placeholder="{{translation.ToolBar_Search_From}}"
+                                ng-model="ModelData.FromDateDisplay" />
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsTuNgayDenNgay">
+                    <div class="col-xs-5">{{translation.ToolBar_Search_To}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="den-ngay" type="text" class="form-control qe-date-picker" placeholder="{{translation.ToolBar_Search_To}}"
+                                ng-model="ModelData.ToDateDisplay" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qe-table">
+                <div>
+                    <div class="g-bar">
+                        <label class="btn btn-default mdi mdi-file-pdf" ng-click="ModelData.ExportClick(0)">{{translation.Report_Main_File_Type_Pdf}}</label>
+                        <label class="btn btn-default mdi mdi-file-word" ng-click="ModelData.ExportClick(4)">{{translation.Report_Main_File_Type_Docx}}</label>
+                        <label class="btn btn-default mdi mdi-file-excel" ng-click="ModelData.ExportClick(3)">{{translation.Report_Main_File_Type_Xlsx}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-6" ng-if="!ModelData.IsShowLake">
+            <div class="qe-table">
+                <div ng-if="ModelData.IsChonNgay">
+                    <div class="col-xs-5">{{translation.Day}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="ngay-chon" type="text" class="form-control qe-date-picker" placeholder="{{translation.Day}}"
+                                ng-model="ModelData.DateChoose" />
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsChonHo">
+                    <div class="col-xs-5">{{translation.LakeName}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="ModelData.SelectedLakeItem" ng-readonly="1" />
+                            <span class="input-group-btn">
+                                <button class="mdi mdi-magnify"></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsTuNgayDenNgay">
+                    <div class="col-xs-5">{{translation.ToolBar_Search_From}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="tu-ngay" type="text" class="form-control qe-date-picker" placeholder="{{translation.ToolBar_Search_From}}"
+                                ng-model="ModelData.FromDateDisplay" />
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ModelData.IsTuNgayDenNgay">
+                    <div class="col-xs-5">{{translation.ToolBar_Search_To}}</div>
+                    <div class="col-xs-7">
+                        <div class="input-group qe-date-picker">
+                            <input id="den-ngay" type="text" class="form-control qe-date-picker" placeholder="{{translation.ToolBar_Search_To}}"
+                                ng-model="ModelData.ToDateDisplay" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qe-table">
+                <div>
+                    <div class="g-bar">
+                        <label class="btn btn-default mdi mdi-file-pdf" ng-click="ModelData.ExportClick(0)">{{translation.Report_Main_File_Type_Pdf}}</label>
+                        <label class="btn btn-default mdi mdi-file-word" ng-click="ModelData.ExportClick(4)">{{translation.Report_Main_File_Type_Docx}}</label>
+                        <label class="btn btn-default mdi mdi-file-excel" ng-click="ModelData.ExportClick(3)">{{translation.Report_Main_File_Type_Xlsx}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

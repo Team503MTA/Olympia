@@ -1,0 +1,41 @@
+﻿<div id="lakeInfoCreateContent" class="qe-form-content" ng-controller="categories.create">
+    <div>
+        <form class="qe-table" role="form" name="Ctrl_LakeInfo_Create">
+            <div class="form-group">
+                <label class="col-xs-4 control-label">{{translation.lbl_Chitieu}}<span>{{translation.IsNotNull}}</span></label>
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="{{translation.lbl_Chitieu}}" ng-model="ModelData.CategoriesName"
+                            name="ModelData_CategoriesName"
+                               new-validation="{{validation(ModelData.CategoriesName,['required','max:100'])}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-4 control-label">{{translation.lbl_DonVi}}<span>{{translation.IsNotNull}}</span></label>
+                <div class="col-xs-6">
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="{{translation.lbl_DonVi}}"  ng-model="ModelData.Unit" focus="{{ModelData.IsFocusLakeName}}"
+                        name="ModelData_Unit"
+                           new-validation="{{validation(ModelData.Unit,['required','max:40'])}}" />
+                        </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-4 control-label">{{translation.Desciption}}</label>
+                <div class="col-xs-6">
+                    <textarea ng-model="ModelData.Note" focus="ModelData.IsFocusNote" ng-attr-placeholder="{{translation.Desciption}}" ng-disabled="ModelData.IsViewMode" class="form-control"
+                        name="ModelData_Note"
+                              new-validation="{{validation(ModelData.Note,['max:40'])}}"></textarea>
+
+                </div>
+            </div>
+
+
+        </form>
+
+        <div ng-include src="'f.buttons.create.new'"></div>
+    </div>
+</div>

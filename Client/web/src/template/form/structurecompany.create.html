@@ -1,0 +1,92 @@
+﻿<div id="structurecompanycreate" class="qe-form-content" ng-controller="structurecompany.create">
+    <div class="row">
+        <form role="form" name="Ctrl_BasinInfo_Add">
+
+            <div class=" qe-table">
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">{{translation.lbl_DonViQuanLy}}<span>{{translation.IsNotNull}}</span></label>
+
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" placeholder="{{translation.lbl_DonViQuanLy}}"
+                               ng-model="ModelData.CompanyName" focus="{{ModelData.IsFocusBasinName}}"
+                               name="ModelData_CompanyName" new-validation="{{validation(ModelData.CompanyName,['required','max:100'])}}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-4">{{translation.area_Mien}}</label>
+                    <div class="col-xs-6">
+                    <div class="input-group">
+                        <input ng-model="ModelData.Area" class="form-control"  placeholder="{{translation.area_Mien}}"
+                               disabled focus="ModelData.IsFocusNote"
+                               name="ModelData_Area" new-validation="{{validation(ModelData.Area,['required','max:100'])}}"/>
+                         <span class="input-group-btn">
+                            <button class="mdi mdi-magnify" focus="{{ModelData.IsFocusAreaName}}"
+                                    ng-click="FindArea()"></button>
+                        </span>
+                    </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-4">{{translation.area_Tinh}}</label>
+                    <div class="col-xs-6">
+                    <div class="input-group">
+                        <input ng-model="ModelData.City" class="form-control" placeholder="{{translation.area_Tinh}}"
+                               disabled focus="ModelData.IsFocusNote"
+                               name="ModelData_Long" new-validation="{{validation(ModelData.City,['required','max:100'])}}"/>
+                         <span  class="input-group-btn">
+                            <button class="mdi mdi-magnify" focus="{{ModelData.IsFocusCityName}}"
+                                    ng-click="FindCity()"></button>
+                        </span>
+                    </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">{{translation.Address}}</label>
+
+                    <div>
+                        <textarea ng-model="ModelData.Address" focus="{{ModelData.IsFocusNote}}"
+                                  placeholder="{{translation.Address}}"
+                                  class="form-control"
+                                  name="ModelData_Address" new-validation="{{validation(ModelData.Address,['max:500'])}}"></textarea>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">{{translation.Mobile}}</label>
+
+                    <div>
+                        <textarea ng-model="ModelData.Mobile" focus="{{ModelData.IsFocusNote}}"
+                                  placeholder="{{translation.Mobile}}"
+                                  class="form-control"
+                                  name="ModelData_Mobile"  new-validation="{{validation(ModelData.Mobile,['max:100'])}}"></textarea>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">{{translation.UserClientList_Email}}</label>
+
+                    <div>
+                        <textarea ng-model="ModelData.Email" focus="{{ModelData.IsFocusNote}}"
+                                  placeholder="{{translation.UserClientList_Email}}"
+                                  class="form-control"
+                                  name="ModelData_Email" new-validation="{{validation(ModelData.Email,['max:100'])}}"></textarea>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">{{translation.User_Admin_List_Note}}</label>
+
+                    <div>
+                        <textarea ng-model="ModelData.Note" focus="{{ModelData.IsFocusNote}}"
+                                  ng-attr-placeholder="{{translation.User_Admin_List_Note}}"
+                                  class="form-control"
+                                  name="ModelData_Note" new-validation="{{validation(ModelData.Note,['max:100'])}}"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div ng-include src="'f.buttons.create.new'"></div>
+</div>

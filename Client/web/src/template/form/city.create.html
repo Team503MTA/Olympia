@@ -1,0 +1,45 @@
+<div id="citycreate" class="qe-form-content" ng-controller="city.create">
+    <form role="form" name="City_Create">
+        <div ng-include src="'w.save.cancel'"></div>
+        <div>
+            <div class="qe-table">
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.lbl_TenTinh}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control"
+                               ng-model="ModelData.CityName" focus="{{ModelData.IsFocusAreaName}}" ng-disabled="ModelData.IsViewMode"
+                               name="ModelData_AreaName" validation-error-to="ModelData_Lake_BasinName_Error"
+                               validation="required:alt={{translation.ErrorInput_required}}|max_len:100:alt={{translation.ErrorInput_max_len_100}}" />
+                        <span id="ModelData_Lake_BasinName_Error" class="validation"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.lbl_TenMien}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span><span>{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="{{translation.lbl_TenMien}}" disabled ng-model="ModelData.CurrentArea" focus="{{ModelData.IsFocusLakeName}}"
+                                   name="ModelData_LakeName" validation-error-to="ModelData_LakeName_Error"
+                                   validation="required:alt={{translation.ErrorInput_required}}|max_len:100:alt={{translation.ErrorInput_max_len_100}}" />
+                            <span id="ModelData_LakeName_Error" class="validation"></span>
+                        <span class="input-group-btn">
+                            <button class="mdi mdi-magnify" focus="{{ModelData.IsFocusBasinName}}" ng-click="FindBasin()"></button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.Desciption}} <span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <textarea ng-model="ModelData.Note" ng-disabled="ModelData.IsViewMode"
+                                  class="form-control"
+                                  name="ModelData_Note" validation-error-to="ModelData_Note_Error"
+                                  validation="max_len:500:alt={{translation.ErrorInput_max_len_500}}"></textarea>
+                        <span id="ModelData_Note_Error" class="validation"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

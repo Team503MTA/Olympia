@@ -1,0 +1,39 @@
+﻿<div style="overflow: auto">
+    <div class="box-outline" id="qe-relogin">
+        <div class="box-content">
+            <form ng-submit="ModelData.formReLoginSubmit()" class="qe-login-form {{ModelData.class}}" role="form">
+                <div class="qe-login-logo">
+                    <img ng-src="{{ModelData.logoUrl}}" />
+                </div>
+                <div class="qe-login-container">
+                    <div class="qe-login-content">
+                        <div class="qe-login-user">
+                            <!-- keyboardInput -->
+                            <input type="text" class="form-control" readonly="readonly"
+                                   ng-model="ModelData.Username" placeholder="{{translation.Form_Login_User}}"
+                                   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="off" />
+                        </div>
+                        <div class="qe-login-pass">
+                            <input type="password" class="form-control" focus="{{ModelData.IsFocusPass}}"
+                                   ng-model="ModelData.Password" placeholder="{{translation.Form_Login_OTP}}" ng-change="ModelData.PassChange()"
+                                   maxlength="7" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="off" />
+                        </div>
+                    </div>
+                    <button type="submit" class="qe-login-submit" ng-disabled="!ModelData.Password">
+                        <i class="glyphicon glyphicon-play-circle"></i>
+                    </button>
+                </div>
+
+                <div class="qe-login-reotp">
+                    <span class="control-label">
+                        <a href="javascript:void(0);" class="control-label" title="{{translation.Form_Login_Resend}}" ng-click="ModelData.resendOtpClick()">{{translation.Form_Login_Resend}}</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="trademark"></div>
+<div class="qe-text-coppyright">
+    <span>{{translation.Form_Login_Copyright}}</span>
+</div>

@@ -1,0 +1,69 @@
+﻿<div id="wwCreateSourceStructure" ng-controller="source.structure.create">
+
+    <form role="form" name="Ctrl_Create_Source_Structure">
+        <div ng-include src="'w.save.cancel'"></div>
+        <div>
+            <div class="qe-table">
+                <div class="row">
+                    <label class="col-xs-7 control-label">{{translation.Type}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-5">
+                        <div class="btn-group two">
+                            <label class="btn btn-default btn-sm" ng-model="ModelData.IsRiver" ng-change="btnChange(true)" uib-btn-radio="true">{{translation.lbl_Song}}</label>
+                            <label class="btn btn-default btn-sm" ng-model="ModelData.IsRiver" ng-change="btnChange(false)" uib-btn-radio="false">{{translation.lbl_Bien}}</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <label class="col-xs-7 control-label">{{translation.TimeViewTerm}} {{translation.IsNotNull}}</label>
+                    <div class="col-xs-5">
+                        <input type="text" ng-model="ModelData.MonitorTime"
+                            class="form-control"
+                            name="ModelData_MonitorTime" validation-error-to="ModelData_MonitorTime_Error"
+                            validation="numeric:alt={{translation.ErrorInput_required_So}}||required:alt={{translation.ErrorInput_required}}" />
+                        <span id="ModelData_MonitorTime_Error" class="validation"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-7 control-label">{{translation.title_FormNguonTiepNhan}} {{translation.IsNotNull}}</label>
+                    <div class="col-xs-5">
+                        <input type="text" ng-model="ModelData.SourceName"
+                            class="form-control"
+                            name="ModelData_SourceName" validation-error-to="ModelData_SourceName_Error"
+                            validation="max_len:100:alt={{translation.ErrorInput_max_len_100}}||required:alt={{translation.ErrorInput_required}}" />
+                        <span id="ModelData_SourceName_Error" class="validation"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-7 control-label">{{translation.Location}} {{translation.IsNotNull}}</label>
+                    <div class="col-xs-5">
+                        <input type="text" ng-model="ModelData.Location"
+                            class="form-control"
+                            name="ModelData_Location" validation-error-to="ModelData_Location_Error"
+                            validation="max_len:100:alt={{translation.ErrorInput_max_len_100}}" />
+                        <span id="ModelData_Location_Error" class="validation"></span>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <label class="col-xs-7 control-label">{{translation.Desciption}}</label>
+                    <div class="col-xs-5">
+                        <textarea ng-model="ModelData.Note"
+                            class="form-control"
+                            name="ModelData_Note" validation-error-to="ModelData_Note_Error"
+                            validation="max_len:500:alt={{translation.ErrorInput_max_len_500}}"></textarea>
+                        <span id="ModelData_Note_Error" class="validation"></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,7 @@
+
+
+exports.ResponseType = {
+
+    User : "User"
+    
+}

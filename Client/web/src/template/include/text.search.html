@@ -1,0 +1,8 @@
+﻿<div class="top-bar to-top" title="{{translation.ToolBar_Search_Search}}">
+    <div id="input" ng-class="ModelData.showSearch?'focus':''" >
+        <input ng-model="ModelData.textSearch" ng-change="ModelData.textSearchChange()" placeholder="{{translation.ToolBar_Search_Search}}..." ng-blur="(!ModelData.textSearch) ? ModelData.showSearch = false:''" type="text" name="search-terms" focus="{{ModelData.showSearch}}">
+    </div>
+    <div class="top-button" ng-class="ModelData.textSearch?'b-orange':'b-spin'" ng-click="(!ModelData.showSearch)? ModelData.showSearch = true:''">
+        <i class="mdi mdi-magnify"></i>
+    </div>
+</div>

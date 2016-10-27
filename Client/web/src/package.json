@@ -1,0 +1,13 @@
+{
+  "name": "VisionFXGold",
+  "description": "VisionFX - Gold",
+  "version": "0.1",
+  "main": "default.html",
+  "window": {
+    "title": "VisionFX - Gold",
+    "icon": "img/qe/icon.png",
+    "show": false,
+    "toolbar": false,
+    "frame": false
+  }
+}

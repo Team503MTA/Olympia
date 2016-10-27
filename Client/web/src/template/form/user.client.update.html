@@ -1,0 +1,93 @@
+<div id="userclientupdate" class="qe-form-content" ng-controller="user.client.update">
+    <div ng-include src="'w.save.cancel.delete'"></div>
+    <div>
+        <div class="qe-heading">{{translation.UserClientUpdate_Info}}</div>
+        <form class="qe-table" role="form" name="Ctrl_User_Client_Update" novalidate="">
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_FullName}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_FullName}}"
+                        ng-model="ModelData.FullName" focus="{{ModelData.IsFocusFullName}}" ng-disabled="ModelData.IsViewMode"
+                        name="ModelData_ClientName_Update" validation-error-to="ModelData_ClientName_Error"
+                        validation="required:alt={{translation.ErrorInput_required}}|max_len:100:alt={{translation.ErrorInput_max_len_100}}" />
+                    <span id="ModelData_ClientName_Error" class="validation"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_DepartmentId}}</label>
+                <div class="col-xs-8">
+                    <textarea ng-model="ModelData.DepartmentId" ng-disabled="ModelData.IsViewMode"
+                        class="form-control" ng-attr-placeholder="{{translation.UserClientList_DepartmentId}}"
+                        name="ModelData_ClientAddress_Update" validation-error-to="ModelData_ClientAddress_Error"
+                        validation="max_len:500:alt={{translation.ErrorInput_max_len_500}}"></textarea>
+                    <span id="ModelData_ClientAddress_Error" class="validation"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_Phone}}</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_Phone}}"
+                        ng-model="ModelData.Phone" ng-disabled="ModelData.IsViewMode"
+                        name="ModelData_ClientPhone_Update" validation-error-to="ModelData_ClientPhone_Error"
+                        validation="min_len:7:alt={{translation.ErrorInput_min_len_7}}|max_len:15:alt={{translation.ErrorInput_max_len_15}}" />
+                    <span id="ModelData_ClientPhone_Error" class="validation"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_Email}}</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_Email}}"
+                        ng-model="ModelData.Email" focus="{{ModelData.IsFocusEmail}}" ng-disabled="ModelData.IsViewMode"
+                        name="ModelData_ClientTax_Update" validation-error-to="ModelData_ClientTax_Error" />
+                    <span id="ModelData_ClientTax_Error" class="validation"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p>{{translation.MemberType_Trading}}</p>
+                </div>
+                <div class="col-xs-8">
+                    <div class="btn-group three" ng-show="!ModelData.IsViewMode">
+                        <label class="btn btn-default" ng-model="ModelData.IsAdmin" uib-btn-radio="1">{{translation.UserClientAdd_Admin}}</label>
+                        <label class="btn btn-default" ng-model="ModelData.IsAdmin" uib-btn-radio="2">{{translation.UserClientAdd_Client}}</label>
+                        <label class="btn btn-default" ng-model="ModelData.IsAdmin" uib-btn-radio="3">{{translation.UserClientAdd_Adminstrator}}</label>
+                    </div>
+                    <label ng-show="ModelData.IsViewMode" class="control-label">{{ModelData.Role}}</label>
+                </div>
+            </div>
+        </form>
+        <div class="qe-heading">{{translation.UserClientUpdate_Login}}</div>
+        <form class="qe-table" role="form" name="Ctrl_User_Client_Update" novalidate="">
+            <div class="row">
+                <label class="col-xs-4 control-label">{{translation.UserClientList_UserName}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="{{translation.UserClientList_UserName}}"
+                        ng-model="ModelData.UserName" focus="{{ModelData.IsFocusUserName}}" disabled="disabled" />
+                </div>
+            </div>
+            <div class="row" ng-show="!ModelData.IsViewMode">
+                <label class="col-xs-4 control-label">{{translation.Form_Login_Pass}}</label>
+                <div class="col-xs-8">
+                    <button class="btn btn-default btn-sm" ng-disabled="ModelData.IsViewMode" ng-click="ModelData.ResetPassword()">
+                        <i class="glyphicon glyphicon-repeat"></i>{{translation.UserClientList_ResetPass}}
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p>{{translation.UserClientList_Status}}</p>
+                </div>
+                <div class="col-xs-8">
+                    <div class="btn-group two" ng-show="!ModelData.IsViewMode">
+                        <label class="btn btn-default col-xs-6" ng-model="ModelData.IsActive" uib-btn-radio="true">{{translation.MemberStatus_Active}}</label>
+                        <label class="btn btn-default col-xs-6" ng-model="ModelData.IsActive" uib-btn-radio="false">{{translation.MemberStatus_Inactive}}</label>
+                    </div>
+                    <label ng-show="ModelData.IsViewMode" class="control-label">{{ModelData.Status}}</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

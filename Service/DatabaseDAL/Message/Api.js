@@ -1,0 +1,7 @@
+
+
+exports.Api = {
+
+    User : "/User"
+    
+}

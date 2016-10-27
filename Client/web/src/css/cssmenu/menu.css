@@ -1,0 +1,350 @@
+#cssmenu ul li {
+    position: relative;
+    padding: 14px 12px;
+    padding-bottom: 0;
+}
+
+#cssmenu ul ul li {
+    padding: 10px 17px;
+    padding-bottom: 0;
+}
+
+    #cssmenu ul ul li:last-child {
+        padding-bottom: 10px;
+    }
+
+    #cssmenu ul ul li.active:before {
+        content: " ";
+        box-shadow: 0px 0 6px #00F300;
+        border-radius: 21px;
+        border: 2px solid lightgreen;
+        position: absolute;
+        top: 14px;
+        left: 7px;
+    }
+
+    #cssmenu ul ul li.active::after {
+        content: " ";
+        box-shadow: 0px 0 7px #00F300;
+        border-radius: 21px;
+        border: 3px solid transparent;
+        position: absolute;
+        top: 13px;
+        left: 6px;
+    }
+
+#cssmenu ul {
+    padding: 0;
+}
+
+    #cssmenu ul li {
+        list-style: none;
+        font-size: 13px;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+
+        #cssmenu ul li .menu-icon {
+            padding-right: 6px;
+        }
+
+        /* color */
+        #cssmenu ul li,
+        #cssmenu ul li a {
+            color: #ccc;
+        }
+
+            #cssmenu > ul > li:first-child.active .menu-icon,
+            #cssmenu > ul > li:first-child.active .menu-icon ~ .menu-text,
+            #cssmenu > ul > li.active > .menu-icon,
+            #cssmenu > ul > li.active > .menu-icon ~ .menu-text,
+            #cssmenu > ul > li:hover > .menu-icon,
+            #cssmenu > ul > li:hover > .menu-icon ~ .menu-text,
+            #cssmenu ul li:hover > a, #cssmenu ul li.active > a {
+                color: #fff;
+                text-shadow: 0 0 6px #BBB;
+            }
+
+#cssmenu > ul > li > .menu-icon,
+#cssmenu > ul > li > .menu-icon ~ .menu-text {
+    cursor: pointer;
+}
+
+#cssmenu ul ul,
+#cssmenu ul ul ul {
+    display: none;
+}
+
+    #cssmenu ul li.active > ul,
+    #cssmenu ul ul li.active > ul {
+        display: block;
+        margin-right: -12px;
+        margin-left: -12px;
+        padding-left: 12px;
+        background: rgba(255, 255, 255, 0.13);
+        margin-top: 10px;
+    }
+
+    #cssmenu ul ul li.active > ul {
+        margin-right: -18px;
+        margin-left: -28px;
+        padding-left: 28px;
+    }
+
+#cssmenu > ul > li > .menu-text {
+    text-transform: uppercase;
+}
+
+
+
+/**********************/
+.top-bar {
+    float: right;
+    position: relative;
+    top: 20px;
+    right: 10px;
+}
+
+    .top-bar > *, .w-bar > *, .f-bar > * {
+        display: inline-block;
+    }
+
+    .top-bar.to-top {
+        position: fixed;
+        top: 15px;
+        right: 135px;
+    }
+
+.top-button, .w-button, .f-button, .g-button {
+    background: #8bc34a;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.23),0 0 10px rgba(0,0,0,0.16);
+    outline: 0 !important;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 18px;
+    -webkit-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    padding: 8px;
+    -webkit-transition: all 200ms ease;
+    transition: all 500ms ease;
+    margin-right: 20px;
+    position: relative;
+}
+
+    .w-button.w-small {
+        font-size: 18px;
+        height: 26px;
+        width: 26px;
+        padding: 4px;
+    }
+
+.f-big {
+    height: 50px;
+    line-height: 28px;
+    font-size: 28px;
+    width: 50px;
+    padding: 10px;
+    background: #B6b6b6;
+    margin-top: -6px;
+    position: relative;
+}
+
+    .f-big:hover:before {
+        box-shadow: 0 0 8px #7AE200;
+    }
+
+    .f-big:before {
+        content: ' ';
+        box-shadow: 0 0 4px #b6b6b6;
+        border: 27px solid transparent;
+        border-radius: 68px;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+    }
+
+    .f-big:after {
+        content: ' ';
+        box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+        border: 27px solid transparent;
+        border-radius: 68px;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+    }
+
+.b-spin:hover, .w-button:hover, .g-button:hover {
+    -webkit-transform: scale(1.2) rotate(360deg);
+    -moz-transform: scale(1.2) rotate(360deg);
+    -ms-transform: scale(1.2) rotate(360deg);
+    -o-transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(360deg);
+}
+
+.w-bar, .f-bar {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+}
+
+.w-bar {
+    top: -20px;
+}
+
+.f-bar {
+    top: -20px;
+    right: 15px;
+}
+
+    .f-bar.f-bar-left {
+        left: 10px;
+        right: inherit;
+        top: -5px;
+    }
+
+.w-bar .w-button {
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    padding: 11px;
+    margin-right: 10px;
+}
+
+.f-bar .f-button {
+    height: 32px;
+    width: 32px;
+    font-size: 18px;
+    padding: 7px;
+    margin-right: 17px;
+}
+
+.w-bar .b-text,
+.f-bar .b-text {
+    font-size: 14px;
+    padding: 10px 0px;
+    top: -1px;
+    z-index: 4;
+    -webkit-transform: rotate(0) !important;
+    -moz-transform: rotate(0) !important;
+    -ms-transform: rotate(0) !important;
+    -o-transform: rotate(0) !important;
+    transform: rotate(0) !important;
+}
+
+.b-text {
+    text-align: center;
+}
+
+.b-button {
+    font-size: 14px;
+    padding: 6px;
+    top: -2px;
+    height: 26px;
+    width: 26px;
+    z-index: 4;
+}
+
+.g-button {
+    font-size: 14px;
+    padding: 0px;
+    top: -7px;
+    height: 20px;
+    width: 20px;
+}
+
+.g-button,
+.f-button,
+.w-button.w-small {
+    background: #2196f3;
+}
+
+.b-red {
+    background: #ff5252;
+}
+
+.b-orange {
+    background: #f57c00;
+}
+
+.b-gray {
+    background: #b6b6b6;
+}
+
+#input {
+    position: relative;
+    top: 10px;
+    right: -26px;
+    width: 320px;
+    height: 34px;
+    overflow: hidden;
+}
+
+
+    #input input {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: calc(100% - 26px);
+        height: 100%;
+        margin: 0;
+        padding: 0 15px;
+        border: none;
+        background-color: #23688b;
+        color: #fff;
+        -webkit-text-fill-color: #fff;
+        font-size: 16px;
+        backface-visibility: none;
+        border-radius: 20px;
+        transition: left 0;
+        border: 1px solid #727272;
+        background-color: rgba(0, 0, 0, 0.22);
+        transition: right 0.3s;
+    }
+
+    #input.focus input {
+        right: 0;
+    }
+
+    #input input:focus {
+        outline: none;
+    }
+
+
+div#cssmenu li:hover .mdi-home ~ .menu-text {
+    cursor: pointer;
+}
+
+.w-bar .btn-group,
+.f-bar .btn-group {
+    margin-right: -12px;
+    margin-top: -6px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.23),0 0 10px rgba(0,0,0,0.16);
+    -ms-box-shadow: 0 0 10px rgba(0,0,0,0.23),0 0 10px rgba(0,0,0,0.16);
+    box-shadow: 0 0 10px rgba(0,0,0,0.23),0 0 10px rgba(0,0,0,0.16);
+    border-radius: 15px;
+}
+
+    .w-bar .btn-group .btn-last,
+    .f-bar .btn-group .btn-last {
+        padding-right: 20px;
+    }
+
+    .w-bar .btn-group > .btn:first-child,
+    .f-bar .btn-group > .btn:first-child {
+        -ms-border-bottom-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        -ms-border-top-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+.f-bar.f-bar-left .btn-group > .btn:last-child {
+    -ms-border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -ms-border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+}

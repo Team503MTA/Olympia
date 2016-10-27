@@ -1,0 +1,475 @@
+@-webkit-keyframes appear {
+    0% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+
+    80% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: rotate(1,1);
+        -moz-transform: rotate(1,1);
+        -ms-transform: rotate(1,1);
+        -o-transform: rotate(1,1);
+        transform: rotate(1,1);
+    }
+}
+
+@-moz-keyframes appear {
+    0% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+
+    80% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: rotate(1,1);
+        -moz-transform: rotate(1,1);
+        -ms-transform: rotate(1,1);
+        -o-transform: rotate(1,1);
+        transform: rotate(1,1);
+    }
+}
+
+@keyframes appear {
+    0% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+
+    80% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: rotate(1,1);
+        -moz-transform: rotate(1,1);
+        -ms-transform: rotate(1,1);
+        -o-transform: rotate(1,1);
+        transform: rotate(1,1);
+    }
+}
+
+@-webkit-keyframes close {
+    0% {
+        -webkit-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        transform: scale(1,1);
+    }
+
+    20% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+}
+
+@-moz-keyframes close {
+    0% {
+        -webkit-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        transform: scale(1,1);
+    }
+
+    20% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+}
+
+@keyframes close {
+    0% {
+        -webkit-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        transform: scale(1,1);
+    }
+
+    20% {
+        -webkit-transform: scale(1.2,1.2);
+        -moz-transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -o-transform: scale(1.2,1.2);
+        transform: scale(1.2,1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+}
+
+.wmWindow {
+    display: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    position: absolute;
+    min-width: 200px;
+    min-height: 60px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+    color: rgba(0,0,0,0.84);
+    animation: wdelay .3s;
+}
+
+    .wmWindow .wmWindowOverlay {
+        display: none;
+    }
+
+    .wmWindow .wmWindowBox {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-box;
+        display: -o-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+        -o-box-orient: vertical;
+        height: 100%;
+        min-height: 60px;
+        width: 100%;
+    }
+
+        .wmWindow .wmWindowBox div.wmTitleBar {
+            position: relative;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-box;
+            display: -o-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            -ms-box-orient: horizontal;
+            -o-box-orient: horizontal;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -ms-box-align: center;
+            -o-box-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            height: 100%;
+            padding: 0px;
+            height: 25px;
+            min-height: 25px;
+            border: 0;
+            overflow: hidden;
+            background-color: #999;
+        }
+
+            .wmWindow .wmWindowBox div.wmTitleBar .wmTitle {
+                -webkit-flex: 1;
+                -moz-flex: 1;
+                -ms-flex: 1;
+                -o-flex: 1;
+                flex: 1;
+                -webkit-box-flex: 1;
+                -moz-box-flex: 1;
+                -ms-box-flex: 1;
+                -o-box-flex: 1;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-box;
+                display: -o-box;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                -webkit-flex-direction: row;
+                -moz-flex-direction: row;
+                -ms-flex-direction: row;
+                -o-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-orient: horizontal;
+                -moz-box-orient: horizontal;
+                -ms-box-orient: horizontal;
+                -o-box-orient: horizontal;
+                -webkit-box-align: center;
+                -moz-box-align: center;
+                -ms-box-align: center;
+                -o-box-align: center;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+                -webkit-touch-callout: none;
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                cursor: default;
+                padding: 0;
+                padding-left: 8px;
+                margin: 0;
+                font-size: 13px;
+                font-weight: 600;
+            }
+
+            .wmWindow .wmWindowBox div.wmTitleBar.hide {
+                display: none;
+            }
+
+        .wmWindow .wmWindowBox div.wmContent {
+            display: block;
+            max-height: calc(100vh - 200px);
+            overflow: auto;
+        }
+
+        .wmWindow .wmWindowBox button.wmResize {
+            display: none;
+        }
+
+    .wmWindow.disabled * {
+        -webkit-touch-callout: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+    }
+
+    .wmWindow.inactive * {
+        -webkit-touch-callout: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+    }
+
+    .wmWindow.inactive div.wmTitleBar {
+        background-color: #999;
+    }
+
+        .wmWindow.inactive div.wmTitleBar div.wmTitle {
+            color: #999;
+        }
+
+    .wmWindow.active {
+        display: block;
+		top: 10px
+    }
+
+        .wmWindow.active iframe {
+            top: 0px !important;
+        }
+
+    .wmWindow.maximized {
+        position: fixed;
+        z-index: 1000000 !important;
+    }
+
+    .wmWindow.active .wmContent * {
+        user-select: text;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        -o-user-select: text;
+    }
+
+    .wmWindow.resizing .wmWindowBox, .wmWindow.moving .wmWindowBox {
+        background-color: #fff8dc;
+    }
+
+        .wmWindow.resizing .wmWindowBox div.wmTitleBar, .wmWindow.moving .wmWindowBox div.wmTitleBar {
+            background-color: #999999;
+        }
+
+
+    .wmWindow .wmWindowBox div.wmTitleBar {
+        background: #303f9f;
+    }
+
+    .wmWindow.resizing .wmWindowBox div.wmTitleBar, .wmWindow.moving .wmWindowBox div.wmTitleBar {
+        background-color: #3A4BB7;
+    }
+
+    .wmWindow.resizing .wmWindowBox, .wmWindow.moving .wmWindowBox, .wmWindow .wmWindowBox div.wmTitleBar .wmButtonBar button.wmClose {
+        background: none;
+    }
+
+    .wmWindow.resizing, .wmWindow.moving {
+        box-shadow: 0px 0 15px rgba(0,0,0,.75);
+    }
+
+    .wmWindow .wmWindowBox div.wmTitleBar .wmButtonBar {
+        padding-right: 5px;
+    }
+
+    .wmWindow .wmContent {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
+.wmHeader {
+    background: #3f51b5;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    -webkit-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+    padding: 16px 8px;
+}
+
+.wmCaption {
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.wmDescription {
+    color: #c5cae9;
+    line-height: 1.5;
+    padding-top: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.wmClose {
+    background: none;
+    border: none;
+    font-size: 26px;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    color: #fff;
+    transition: .3s;
+    line-height: 26px;
+}
+
+    .wmClose:hover {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #fff;
+    }
+
+.wmWindow .wmContent {
+    background: #f6f6f6;
+}
+
+
+.wmContainer {
+    position: relative;
+}
+
+.wmWindow.active .wmContent .nav-tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.wmWindow.active .wmContent .tab-content {
+    max-height: calc(100vh - 260px);
+    overflow: auto;
+    margin-top: 20px;
+}
+
+@keyframes wdelay {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.wmWarning ~ .wmContent .nav-tabs {
+    top: 26px !important;
+}

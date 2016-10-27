@@ -1,0 +1,139 @@
+<div id="userclientinfoupdate" class="qe-form-content" ng-controller="user.client.info.update">
+    <form role="form" name="User_Client_Info_Update">
+        <div ng-include src="'w.save.cancel'"></div>
+        <div>
+            <div class="qe-heading">{{translation.UserClientUpdate_Info}}</div>
+            <div class="qe-table">
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.UserClientList_FullName}}<span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" placeholder="{{translation.UserClientList_FullName}}"
+                            ng-model="ModelData.FullName" focus="{{ModelData.IsFocusFullName}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_ClientName_Update" validation-error-to="ModelData_ClientName_Info_Error"
+                            validation="required:alt={{translation.ErrorInput_required}}|max_len:100:alt={{translation.ErrorInput_max_len_100}}" />
+                        <span id="ModelData_ClientName_Info_Error" class="validation"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.UserClientList_Phone}} <span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" placeholder="{{translation.UserClientList_Phone}}"
+                            ng-model="ModelData.Phone" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_ClientPhone_Update" validation-error-to="ModelData_ClientPhone_Info_Error"
+                            validation="required:alt={{translation.ErrorInput_required}}|min_len:7:alt={{translation.ErrorInput_min_len_7}}|max_len:15:alt={{translation.ErrorInput_max_len_15}}" />
+                        <span id="ModelData_ClientPhone_Info_Error" class="validation"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.UserClientList_Email}} <span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" placeholder="{{translation.UserClientList_Email}}"
+                            ng-model="ModelData.Email" focus="{{ModelData.IsFocusEmail}}" ng-disabled="ModelData.IsViewMode"
+                            name="ModelData_ClientTax_Update" validation-error-to="ModelData_ClientTax_Info_Error"
+                            validation="required:alt={{translation.ErrorInput_required}}" />
+                        <span id="ModelData_ClientTax_Info_Error" class="validation"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4 control-label">{{translation.UserClientList_DepartmentId}} <span ng-if="!ModelData.IsViewMode">{{translation.IsNotNull}}</span></label>
+                    <div class="col-xs-8">
+                        <textarea ng-model="ModelData.DepartmentId" ng-disabled="ModelData.IsViewMode"
+                            class="form-control" ng-attr-placeholder="{{translation.UserClientList_DepartmentId}}"
+                            name="ModelData_ClientAddress_Update" validation-error-to="ModelData_ClientAddress_Info_Error"
+                            validation="required:alt={{translation.ErrorInput_required}}|max_len:500:alt={{translation.ErrorInput_max_len_500}}"></textarea>
+                        <span id="ModelData_ClientAddress_Info_Error" class="validation"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ModelData.IsPendingActive">
+
+                <div class="qe-heading" ng-if="!ModelData.IsViewMode">{{translation.UserClientUpdate_Login}}</div>
+
+                <div class="qe-table" ng-if="!ModelData.IsViewMode" role="form" name="Ctrl_User_Client_Update" novalidate="">
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_UserName}}</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" placeholder="{{translation.UserClientList_UserName}}"
+                                ng-model="ModelData.UserName" focus="{{ModelData.IsFocusUserName}}" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_CurrentPassword}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_CurrentPassword}}"
+                                name="ModelData_CurrentPass_Update" validation-error-to="ModelData_CurrentPass_Error"
+                                validation="required:alt={{translation.ErrorInput_required}}"
+                                ng-model="ModelData.CurrentPassword" focus="{{ModelData.IsFocusCurrentPassword}}" />
+                            <span id="ModelData_CurrentPass_Error" class="validation"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_NewPassWord}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_NewPassWord}}"
+                                ng-model="ModelData.NewPassWord" focus="{{ModelData.IsFocusNewPassWord}}"
+                                name="ModelData_NewPass_Update" validation-error-to="ModelData_NewPass_Error"
+                                validation="required:alt={{translation.ErrorInput_required + '|'}}{{ModelData.specialCharacter(1)?'':'max_len:0:alt=' + translation.specialCharacter + '|'}}{{ModelData.number(1)?'':'max_len:0:alt=' + translation.containNumber + '|'}}{{ModelData.upperCase(1)?'':'max_len:0:alt=' + translation.containUpperCase + '|'}}min_len:6:alt={{translation.ErrorInput_min_len_6}}" />
+                            <span id="ModelData_NewPass_Error" class="validation"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_ConfirmPassword}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_ConfirmPassword}}"
+                                ng-model="ModelData.ConfirmPassword" focus="{{ModelData.IsFocusConfirmPassword}}"
+                                name="ModelData_ConfirmNewPass_Update" validation-error-to="ModelData_ConfirmNewPass_Error"
+                                validation="required:alt={{translation.ErrorInput_required + '|'}}{{ModelData.specialCharacter(2)?'':'max_len:0:alt=' + translation.specialCharacter + '|'}}{{ModelData.number(2)?'':'max_len:0:alt=' + translation.containNumber + '|'}}{{ModelData.upperCase(2)?'':'max_len:0:alt=' + translation.containUpperCase + '|'}}min_len:6:alt={{translation.ErrorInput_min_len_6}}" />
+                            <span id="ModelData_ConfirmNewPass_Error" class="validation"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-if="!ModelData.IsPendingActive">
+
+                <div class="qe-heading" ng-if="!ModelData.IsViewMode">{{translation.UserClientUpdate_Login}}</div>
+
+                <div class="qe-table" ng-if="!ModelData.IsViewMode">
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_UserName}}</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" placeholder="{{translation.UserClientList_UserName}}"
+                                ng-model="ModelData.UserName" focus="{{ModelData.IsFocusUserName}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_CurrentPassword}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_CurrentPassword}}"
+                                ng-model="ModelData.CurrentPassword" focus="{{ModelData.IsFocusCurrentPassword}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_NewPassWord}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_NewPassWord}}"
+                                ng-model="ModelData.NewPassWord" focus="{{ModelData.IsFocusNewPassWord}}"
+                                name="ModelData_AreaCode_NewPassWord" validation-error-to="ModelData_AreaCode_NewPassWord_Error"
+                                validation="required:alt={{translation.ErrorInput_required + '|'}}{{ModelData.specialCharacter(1)?'':'max_len:0:alt=' + translation.specialCharacter + '|'}}{{ModelData.number(1)?'':'max_len:0:alt=' + translation.containNumber + '|'}}{{ModelData.upperCase(1)?'':'max_len:0:alt=' + translation.containUpperCase + '|'}}min_len:6:alt={{translation.ErrorInput_min_len_6}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-4 control-label">{{translation.UserClientList_ConfirmPassword}} <span>{{translation.IsNotNull}}</span></label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control" placeholder="{{translation.UserClientList_ConfirmPassword}}"
+                                ng-model="ModelData.ConfirmPassword" focus="{{ModelData.IsFocusConfirmPassword}}"
+                                name="ModelData_AreaCode_ConfirmPassword" validation-error-to="ModelData_AreaCode_ConfirmPassword_Error"
+                                validation="required:alt={{translation.ErrorInput_required + '|'}}{{ModelData.specialCharacter(2)?'':'max_len:0:alt=' + translation.specialCharacter + '|'}}{{ModelData.number(2)?'':'max_len:0:alt=' + translation.containNumber + '|'}}{{ModelData.upperCase(2)?'':'max_len:0:alt=' + translation.containUpperCase + '|'}}min_len:6:alt={{translation.ErrorInput_min_len_6}}" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

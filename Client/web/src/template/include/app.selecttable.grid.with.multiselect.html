@@ -1,0 +1,16 @@
+﻿<div id="selectTableGridWithMultiselectContent" class="qe-form-content">
+    <div style="overflow: hidden;">
+        <button type="button" class="close" ng-click="ModelData.Close()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    
+    <input class="ag-search" placeholder="Tìm kiếm..." type="text" ng-model="ModelData.SelectableGridOptions.quickFilterText" />
+    <div  ag-grid="ModelData.SelectableGridOptions"></div>
+    <div class="qe-appro-button modal-footer">
+        <button class="btn btn-primary btn-sm" ng-click="ModelData.Done()">
+            <i class="mdi mdi-check"></i>{{ModelData.IsAddnew?translation.ToolBar_Addnew_Button:translation.BUTTON_SELECTED}}
+        </button>
+        <button class="btn btn-warning btn-sm" ng-click="ModelData.Close()">
+            <i class="mdi mdi-check"></i>{{translation.BUTTON_Close}}
+        </button>
+    </div>
+</div>

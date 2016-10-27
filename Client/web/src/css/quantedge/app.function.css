@@ -1,0 +1,28 @@
+﻿.only-number-input /*chi nhap so*/ {
+}
+.only-number-minus-input /*cho phep nhap so (gom ca so am)*/ {
+}
+.only-number-notdecimal-minus-input /*cho phep nhap so (gom ca so am) khong co dau . */ {
+}
+.only-price-notdecimal-number-input /*cho phep nhap so (gom ca so am) khong co dau .*/ {
+}
+.only-character-number-input /*cho phep nhap so va chu cai*/ {
+}
+.only-character-notspace-number-input /*cho phep nhap so va chu cai (cam nhap dau cach)*/ {
+}
+.only-character-number-minus-input /*ho phep nhap so va chu cai (gom va dau am) */ {
+}
+.only-quantity-number-input /*nhap khoi luong (cho phep nhap so tu 0 den 9 va nhap dau cham thap phan)*/ {
+}
+.key-press-enter-input /*cho phep go phim enter, ap dung cho input type=text */ {
+}
+.only-basesymbol-number-input /*cho phep nhap so va chu cai va dau "/" , style nay dung de nhap cap ngoai te tren form dat lenh */ {
+}
+.only-price-number-input /*nhap gia (cho phep nhap so tu 0 den 9 va nhap dau cham thap phan)*/ {
+}
+.only-limit-number-input /*nhap han muc (cho phep nhap so tu 0 den 9)*/ {
+}
+.only-collect-limit-number-input /*nhap han muc thu(cho phep nhap so tu 0 den 9)*/ {
+}
+.only-margin-number-input /*nhap gia (cho phep nhap so tu 0 den 9 va nhap dau cham thap phan)*/ {
+}

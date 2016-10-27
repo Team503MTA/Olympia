@@ -1,0 +1,30 @@
+﻿<div id="customerGrid" class="qe-form-content">
+    <div style="overflow: hidden;">
+        <div style="float: left;" ng-if="ModelData.title" ng-bind="ModelData.title"></div>
+        <button type="button" class="close" ng-click="ModelData.Close()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    <div ng-include src="'template.toolbar.count.html'" class="button-float" style="margin-top: 10px;"></div>
+    <div>
+        <form ng-submit="ModelData.formChatSubmit()" role="form">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <input class="form-control input-sm key-press-enter-input" placeholder="Tìm kiếm..." type="text"  ng-model="ModelData.SelectableGridOptions.quickFilterText" ng-change="ModelData.FilterChanged()" />
+                        <div class="input-group-btn" ng-show="ModelData.IsShowQuery">
+                            <button class="btn btn-primary btn-sm" ng-click="ModelData.RequestOnServer()">
+                                <i class="mdi mdi-magnify"></i>{{translation.FormAppCustomerGrid_btnQuery}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label">{{ModelData.GridName}}</label>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div ag-grid="ModelData.SelectableGridOptions"></div>
+</div>

@@ -1,0 +1,25 @@
+﻿<div class="f-bar">
+    <div class="f-button b-text b-gray" ng-if="ModelData.Count !== undefined" title="{{ModelData.Count}} {{translation.Records}}">
+        {{ModelData.Count}}
+    </div>
+    <div class="f-button b-spin" ng-if="ModelData.IsEditAllowed" ng-click="addNewCommand()" title="{{translation.BUTTON_ADDNEW}}">
+        <i class="mdi mdi-plus"></i>
+    </div>
+
+    <div class="f-button b-spin"  ng-click="ExportCSV()" title="{{translation.ToolBar_Search_ExportCSV}}">
+        <i class="mdi mdi-file-export"></i>
+    </div>
+
+    <div class="f-button b-spin" ng-if="ModelData.IsViewMode && ModelData.IsEditForm" ng-click="EditForm()" title="{{translation.Tool_Edit}}">
+        <i class="mdi mdi-pencil"></i>
+    </div>
+    <div class="w-button b-orange" ng-if="!ModelData.IsViewMode" ng-click="SaveFunctionClick()" title="{{translation.BUTTON_SAVE}}">
+        <i class="mdi mdi-content-save"></i>
+    </div>
+    <div class="w-button b-red" ng-if="!ModelData.IsViewMode" ng-click="CancelFunctionClick()" title="{{translation.BUTTON_CANCLE}}">
+        <i class="mdi mdi-rotate-left"></i>
+    </div>
+    <div class="f-button b-spin" ng-if="ModelData.IsViewMode && ModelData.IsFromExcel" ng-click="ImportExcel()" title="{{translation.Tool_Edit}}">
+        <i class=" mdi mdi-file-excel"></i>
+    </div>
+</div>
